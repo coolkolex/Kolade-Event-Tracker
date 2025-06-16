@@ -1,7 +1,7 @@
-interface FilterButtonsProps {
+type FilterButtonsProps = {
   currentFilter: string;
   setFilter: (filter: string) => void;
-}
+};
 
 const FilterButtons = ({ currentFilter, setFilter }: FilterButtonsProps) => {
   const filters = ["all", "academic", "social", "career"];
