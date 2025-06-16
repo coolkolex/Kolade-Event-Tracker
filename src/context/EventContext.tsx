@@ -1,6 +1,6 @@
 import { createContext, useState, type ReactNode } from "react";
 
-export interface Event {
+export type Event = {
   id: string;
   title: string;
   date: string;
@@ -8,15 +8,15 @@ export interface Event {
   type: "academic" | "social" | "career";
   attendees: string[];
   capacity: number;
-}
+};
 
-interface EventContextType {
+type EventContextType = {
   events: Event[];
   userEvents: (user: string) => Event[];
   addEvent: (event: Omit<Event, "id" | "attendees">) => void;
   registerForEvent: (eventId: string, user: string) => void;
   cancelRegistration: (eventId: string, user: string) => void;
-}
+};
 
 export const EventContext = createContext<EventContextType | undefined>(
   undefined
